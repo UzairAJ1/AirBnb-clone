@@ -2,7 +2,8 @@ const mongoose=require('mongoose');
 const {Schema}=mongoose
 
 const placeSchema=new Schema({
-// owner:{type:mongoose.Schema.Types.ObjectId,ref:'User'},    
+// owner:{type:mongoose.Schema.Types.ObjectId,ref:'User'},  
+booked:Boolean,  
 owner:String,
 title:String,
 address:String,

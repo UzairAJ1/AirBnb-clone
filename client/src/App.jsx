@@ -9,6 +9,7 @@ import Account from './components/Account'
 import axios from 'axios'
 import { UserContext, UserContextProvider } from './UserContext'
 import { useContext, useEffect, useState } from 'react'
+import BookPage from './components/BookPage'
 
 axios.defaults.baseURL = 'http://127.0.0.1:4000';
 axios.defaults.withCredentials = true;
@@ -21,6 +22,7 @@ function App() {
     <UserContextProvider>
       <Routes>
         <Route path='/' element={<Layouts />}>
+          <Route path='/book/:id' element={<BookPage />} />
           <Route index element={<Index />}></Route>
           <Route path='login' element={<Login />}></Route>
           
