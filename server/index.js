@@ -19,8 +19,8 @@ const jwtSecret = 'fasefraw4r5r3wq45wdfgw34twdfg';
 app.use('/uploads', express.static('uploads'));
 
 app.use(cors({
-  credentials: true,
-  origin: 'http://127.0.0.1:5173'
+  credentials: false,
+  origin: 'https://vercel.com/uzairaj1/memories-app'
 }));
 app.use(express.json());
 app.use(cookieParser())
