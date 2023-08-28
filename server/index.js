@@ -87,7 +87,7 @@ app.post('/save',upload.single('photos'), async (req, res) => {
 
     try {
       const photos=req.file.path;
-  
+  console.log(req);
       const placeDoc = await Place.create({
         booked,
         owner, 
