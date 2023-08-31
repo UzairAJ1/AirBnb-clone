@@ -20,7 +20,7 @@ app.use('/uploads', express.static('uploads'));
 
 app.use(cors({
   credentials: true,
-  origin: 'https://air-bnb-clone-kohl-beta.vercel.app',
+  origin: 'https://air-bnb-clone-79cq996ay-uzairaj1.vercel.app',
   
   //methods:["POST","GET"]
 }));
