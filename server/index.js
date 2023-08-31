@@ -9,18 +9,18 @@ const Book=require('./models/Booking.js')
 const jwt = require('jsonwebtoken')
 const crypto = require('crypto');
 const cookieParser = require('cookie-parser')
-//const multer = require('multer');
-//const upload = multer({ dest: 'uploads/' });
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' });
 
 require('dotenv').config()
 mongoose.connect(process.env.MONGO_URL);
 const jwtSecret = 'fasefraw4r5r3wq45wdfgw34twdfg';
 
-//app.use('/uploads', express.static('uploads'));
+app.use('/uploads', express.static('uploads'));
 
 app.use(cors({
   credentials: true,
-  origin: 'https://air-bnb-clone-ioi4.vercel.app',
+  origin: 'http://127.0.0.1:5173',
   
   //methods:["POST","GET"]
 }));
@@ -75,53 +75,53 @@ app.post('/logout', (req, res) => {
 
 
 
-// app.post('/save',upload.single('photos'), async (req, res) => {
-//   const { token } = req.cookies;
-//   const { title, address, description } = req.body;
-//   const booked=false;
-//   jwt.verify(token, jwtSecret, {}, async (err, user) => {
-//     if (err) {
-//       res.status(401).json({ message: 'Unauthorized' });
-//       return;
-//     }
+app.post('/save',upload.single('photos'), async (req, res) => {
+  const { token } = req.cookies;
+  const { title, address, description } = req.body;
+  const booked=false;
+  jwt.verify(token, jwtSecret, {}, async (err, user) => {
+    if (err) {
+      res.status(401).json({ message: 'Unauthorized' });
+      return;
+    }
 
-//     const owner = user.email; 
+    const owner = user.email; 
 
-//     try {
-//       const photos=req.file.path;
-//   console.log(req);
-//       const placeDoc = await Place.create({
-//         booked,
-//         owner, 
-//         title,
-//         address,
-//         description,
-//         photos
+    try {
+      const photos=req.file.path;
+  console.log(req);
+      const placeDoc = await Place.create({
+        booked,
+        owner, 
+        title,
+        address,
+        description,
+        photos
         
-//       });
+      });
 
-//       res.json({placeDoc,message:'saved'});
-//     } catch (e) {
-//       res.status(422).json(e);
-//     }
-//   });
-// });
+      res.json({placeDoc,message:'saved'});
+    } catch (e) {
+      res.status(422).json(e);
+    }
+  });
+});
 
 
-// app.post('/upload',upload.single('photos'),async(req,res)=>
-// {
+app.post('/upload',upload.single('photos'),async(req,res)=>
+{
   
-//   const photos=req.file.path;
-//   //console.log(imagePath);
-//  try {
-//   const placeDoc = await Place.create({
-//    photos,
-//   });
-//   res.json(placeDoc);
-// } catch (e) {
-//   res.status(422).json(e);
-// }
-// });
+  const photos=req.file.path;
+  //console.log(imagePath);
+ try {
+  const placeDoc = await Place.create({
+   photos,
+  });
+  res.json(placeDoc);
+} catch (e) {
+  res.status(422).json(e);
+}
+});
 
 app.get('/places', async(req,res)=>{
   const { token } = req.cookies;
@@ -245,6 +245,6 @@ app.post('/my-booking', async(req,res)=>{
    
   });
 })
- app.listen(4000)
+app.listen(4000)
 
 module.exports = app;

@@ -11,7 +11,7 @@ import { UserContext, UserContextProvider } from './UserContext'
 import { useContext, useEffect, useState } from 'react'
 import BookPage from './components/BookPage'
 
-axios.defaults.baseURL = 'https://air-bnb-clone-pearl-theta.vercel.app/';
+axios.defaults.baseURL = 'http://localhost:4000';
 axios.defaults.withCredentials = true;
 function App() {
 //const [user,setUser]=useState(null);
