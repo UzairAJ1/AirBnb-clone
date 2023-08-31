@@ -18,12 +18,12 @@ const jwtSecret = 'fasefraw4r5r3wq45wdfgw34twdfg';
 
 app.use('/uploads', express.static('uploads'));
 
-app.use(cors({
-  credentials: true,
-  origin: 'https://air-bnb-clone-79cq996ay-uzairaj1.vercel.app',
+// app.use(cors({
+//   credentials: true,
+//   origin: 'https://air-bnb-clone-79cq996ay-uzairaj1.vercel.app',
   
-  //methods:["POST","GET"]
-}));
+//   //methods:["POST","GET"]
+// }));
 app.use(express.json());
 app.use(cookieParser())
 app.get('/test', (req, res) => {
