@@ -18,12 +18,12 @@ const upload = multer({ dest: 'uploads/' });
 
 // app.use('/uploads', express.static('uploads'));
 
-// app.use(cors({
-//   credentials: true,
-//   origin: 'https://air-bnb-clone-ioi4.vercel.app',
+app.use(cors({
+  credentials: true,
+  origin: 'https://air-bnb-clone-ioi4.vercel.app',
   
-//   //methods:["POST","GET"]
-// }));
+  //methods:["POST","GET"]
+}));
 app.use(express.json());
 app.use(cookieParser())
 app.get('/test', (req, res) => {
