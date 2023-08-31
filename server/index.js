@@ -13,14 +13,14 @@ const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
 
 require('dotenv').config()
-mongoose.connect(process.env.MONGO_URL);
+mongoose.connect('mongodb+srv://uzair:123@cluster0.k2yc4jj.mongodb.net/');
 const jwtSecret = 'fasefraw4r5r3wq45wdfgw34twdfg';
 
 app.use('/uploads', express.static('uploads'));
 
 app.use(cors({
   credentials: true,
-  origin: 'https://air-bnb-clone-ioi4.vercel.app/',
+  origin: 'http://127.0.0.1:5173',
   
   //methods:["POST","GET"]
 }));
