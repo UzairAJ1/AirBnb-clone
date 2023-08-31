@@ -20,7 +20,7 @@ app.use('/uploads', express.static('uploads'));
 
 app.use(cors({
   credentials: true,
-  origin: 'http://127.0.0.1:5173',
+  origin: 'https://air-bnb-clone-ioi4.vercel.app',
   
   //methods:["POST","GET"]
 }));
