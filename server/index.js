@@ -20,8 +20,9 @@ app.use('/uploads', express.static('uploads'));
 
 app.use(cors({
   credentials: true,
-  origin: 'https://memories-app-1gx9.vercel.app/',
-  methods:["POST","GET"]
+  origin: 'http://127.0.0.1:5173',
+  
+  //methods:["POST","GET"]
 }));
 app.use(express.json());
 app.use(cookieParser())
