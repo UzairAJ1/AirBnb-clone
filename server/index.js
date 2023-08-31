@@ -1,16 +1,16 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-// const router = express.Router();
-// const mongoose = require('mongoose');
-// const User = require('./models/User.js')
-// const Place=require('./models/Place.js')
-// const Book=require('./models/Booking.js')
-// const jwt = require('jsonwebtoken')
-// const crypto = require('crypto');
-// const cookieParser = require('cookie-parser')
-// const multer = require('multer');
-// const upload = multer({ dest: 'uploads/' });
+const router = express.Router();
+const mongoose = require('mongoose');
+const User = require('./models/User.js')
+const Place=require('./models/Place.js')
+const Book=require('./models/Booking.js')
+const jwt = require('jsonwebtoken')
+const crypto = require('crypto');
+const cookieParser = require('cookie-parser')
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' });
 
 // require('dotenv').config()
 // mongoose.connect(process.env.MONGO_URL);
