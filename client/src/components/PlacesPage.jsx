@@ -40,7 +40,7 @@ const PlacesPage = () => {
       const response = await axios.post('/save', data, { 'Content-Type': 'multipart/form-data' },
 
       );
-      //console.log(data.get('title'));
+      console.log(data);
       if (response.data.message === 'saved') {
         alert("Saved")
       }
