@@ -41,7 +41,7 @@ app.get('/test', (req, res) => {
 
 app.use('/login', loginRoute);
 app.use('/profile', profileRoute);
-app.use('/save', saveRoute);
+//app.use('/save', saveRoute);
 app.use('/find', findRoute);
 app.use('/start', startRoute);
 app.use('/places', placesRoute);
