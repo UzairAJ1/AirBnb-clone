@@ -9,8 +9,8 @@ const Book=require('./models/Booking.js')
 const jwt = require('jsonwebtoken')
 const crypto = require('crypto');
 const cookieParser = require('cookie-parser')
-const multer = require('multer');
-const upload = multer({ dest: 'uploads/' });
+//const multer = require('multer');
+//const upload = multer({ dest: 'uploads/' });
 const loginRoute=require('./routes/loginRoute.js')
 const profileRoute=require('./routes/profileRoute.js')
 const logoutRoute=require('./routes/logoutRoute.js')
@@ -24,7 +24,7 @@ require('dotenv').config()
 mongoose.connect(process.env.MONGO_URL);
 const jwtSecret = 'fasefraw4r5r3wq45wdfgw34twdfg';
 
-app.use('/uploads', express.static('uploads'));
+//app.use('/uploads', express.static('uploads'));
 
 app.use(cors({
   credentials: true,
