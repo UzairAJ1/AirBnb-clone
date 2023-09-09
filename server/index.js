@@ -21,7 +21,7 @@ const placesRoute=require('./routes/placesRoute.js')
 const bookRoute=require('./routes/bookRoute.js')
 const myBookingRoute=require('./routes/my-bookingRoute.js')
 require('dotenv').config()
-mongoose.connect(process.env.MONGO_URL);
+//mongoose.connect(process.env.MONGO_URL);
 const jwtSecret = 'fasefraw4r5r3wq45wdfgw34twdfg';
 
 //app.use('/uploads', express.static('uploads'));
